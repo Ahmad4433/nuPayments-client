@@ -1,0 +1,208 @@
+
+
+.main{
+    background-color: black;
+    padding: 2rem;
+}
+
+.card{
+    padding-left: 5rem;
+    display: flex;
+    gap: 2rem;
+   
+}
+
+
+
+.right{
+    width: 100%;
+ color: white;
+    padding-right: 8rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+}
+
+.rhaiding{
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    margin-bottom: 4rem;
+}
+
+.rdetail{
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 4rem;
+    text-align: justify;
+   
+}
+
+
+.left{
+    width: 100%;
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  padding-right: 2rem;
+
+}
+
+.haiding{
+    color: #F28AEE;
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    margin-bottom: 4rem;
+}
+
+.action {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 3rem;
+   
+  }
+  
+  .action1 {
+    background-color: #f28aee;
+    padding: 0.8rem;
+    display: block;
+    width: 30%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    font-size: 1.2rem;
+  }
+  
+
+
+  .img3 {
+    max-width: 100%;
+    object-fit: contain;
+    height: 150px;
+    width: 150px;
+  }
+  
+  .image3 {
+    height: 150px;
+    width: 150px;
+   
+
+  
+  }
+  .img2 {
+    max-width: 100%;
+    object-fit: contain;
+    height: 140px;
+    width: 140px;
+  }
+  
+  .image2 {
+    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   padding-right: 2rem;
+  }
+  
+
+  .action1:hover{
+    cursor: pointer;
+  }
+
+  .lower{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .lower p:hover{
+cursor: pointer;
+font-size: 1rem;
+font-weight: 400;
+  }
+
+  @media(max-width:756px){
+    .main,.card,.right,.left,.rhaiding,.rdetail,.haiding,.rdetail,.action,.action1{
+        padding: 0;
+        margin: 0;
+        gap: 0;
+    }
+.card{
+    flex-direction: column;
+}
+
+.image2,.img2,.image3,.img3{
+    height: 100px;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    padding: 2rem 1rem;
+}
+
+.haiding{
+    font-size: 2.2rem;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.action1{
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 2rem 0;
+}
+
+.left{
+    display: block;
+    gap: 0;
+}
+.image2{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.img2{
+    height: 110px;
+    width: 110px;
+}
+
+.image3{
+    width: 100%;
+    padding-left: 2rem;
+}
+
+
+.rhaiding{
+    font-size: 1.8rem;
+margin-bottom: 2rem;
+margin-top: 2rem;
+}
+
+.rdetail{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.lower{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+
+  }
