@@ -5,7 +5,14 @@ import currency2 from "../.././../assets/currency2.png";
 import currency3 from "../../../assets/currency3.png";
 import Banner2 from "../banne2/Banner2";
 import Banner from "../banner/Banner";
+
 const Hero = () => {
+
+const navigateToLogin = ()=>{
+  
+window.location.href='http://localhost:3000/auth-signup.html'
+}
+
   return (
     <div className={style.main}>
       <div className={style.card}>
@@ -15,8 +22,8 @@ const Hero = () => {
             Zero knowledge payments that provide cross-borders solutions
           </p>
           <div className={style.action}>
-            <button className={style.action1}>Individual</button>
-            <button className={style.action2}>Business</button>
+            <button onClick={navigateToLogin} className={style.action1}>Individual</button>
+            <button onClick={navigateToLogin} className={style.action2}>Business</button>
           </div>
         </div>
         <div className={style.right}>
