@@ -5,6 +5,15 @@ import currency2 from "../.././../assets/currency2.png";
 import currency3 from "../../../assets/currency3.png";
 
 const Banner2 = () => {
+
+
+  const navigateToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+
   return (
     <div className={style.main}>
       <div className={style.card}>
@@ -16,7 +25,7 @@ const Banner2 = () => {
             20 cents. No hidden fees! Sign up to get started today!
           </p>
           <div className={style.action}>
-            <button className={style.action1}>Sign Up</button>
+            <button onClick={navigateToTop} className={style.action1}>Sign Up</button>
           </div>
         </div>
         <div className={style.right}>

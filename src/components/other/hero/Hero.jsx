@@ -8,9 +8,9 @@ import Banner from "../banner/Banner";
 
 const Hero = () => {
 
-const navigateToLogin = ()=>{
+const navigateToLogin = (type)=>{
   
-window.location.href='http://localhost:3000/auth-signup.html'
+window.location.href=`https://ny-payments-admin.vercel.app/auth-signup.html?type=${type}`
 }
 
   return (
@@ -22,8 +22,8 @@ window.location.href='http://localhost:3000/auth-signup.html'
             Zero knowledge payments that provide cross-borders solutions
           </p>
           <div className={style.action}>
-            <button onClick={navigateToLogin} className={style.action1}>Individual</button>
-            <button onClick={navigateToLogin} className={style.action2}>Business</button>
+            <button onClick={()=>navigateToLogin('individual')} className={style.action1}>Individual</button>
+            <button onClick={()=>navigateToLogin('business')} className={style.action2}>Business</button>
           </div>
         </div>
         <div className={style.right}>
