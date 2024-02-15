@@ -8,10 +8,12 @@ import Banner from "../banner/Banner";
 
 const Hero = () => {
 
-const navigateToLogin = (type)=>{
+  const navigateToLogin = (type) => {
+    const local = 'http://localhost:3000/auth-signup.html'
+    const live = 'https://ny-payments-admin-2.vercel.app/auth-signup.html'
+    window.open(`${live}?type=${type}`, '_blank');
+  }
   
-window.location.href=`https://ny-payments-admin.vercel.app/auth-signup.html?type=${type}`
-}
 
   return (
     <div className={style.main}>
