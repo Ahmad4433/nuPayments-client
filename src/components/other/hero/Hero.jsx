@@ -11,7 +11,7 @@ const Hero = () => {
   const navigateToLogin = (type) => {
     const local = 'http://localhost:3000/auth-signup.html'
     const live = 'https://nu-payment-final.vercel.app/auth-signup.html'
-    window.open(`${live}?type=${type}`, '_blank');
+    window.open(`${local}?type=${type}`, '_blank');
   }
   
 
