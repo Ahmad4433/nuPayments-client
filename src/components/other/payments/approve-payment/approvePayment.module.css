@@ -11,6 +11,13 @@
     border-radius: 12px;
 }
 
+@media(max-width:756px){
+    .card{
+        max-width: 98%;
+        margin: 0 auto;
+    }
+}
+
 .head{
     display: flex;
     align-items: center;
