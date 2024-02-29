@@ -2,13 +2,21 @@ import React from 'react'
 import style from './approvePayment.module.css'
 import { IoCloseSharp } from "react-icons/io5";
 const ApprovePayment = () => {
+
+
+    const closeTab = ()=>{
+// Close the current tab
+window.close();
+
+    }
+
   return (
     <div className={style.main} >
       <div className={style.card} >
 
     <div className={style.head} >
         <p className={style.title} >Pending Approval</p>
-        <IoCloseSharp className={style.icon} />
+        <IoCloseSharp onClick={closeTab} className={style.icon} />
     </div>
     <div className={style.sendDetail} >
         <p className={style.fromT} >from</p>
