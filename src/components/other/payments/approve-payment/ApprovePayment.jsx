@@ -18,7 +18,7 @@ getPaymentDetail()
 async function getPaymentDetail(){
 try {
     
-    const response = await fetch('https://nu-payment-server-web.vercel.app/single',{
+    const response = await fetch('https://nu-payment-server-web.vercel.app/payment/single',{
 
 method:'POST',
 body:JSON.stringify({id:link}),
