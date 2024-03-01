@@ -72,6 +72,9 @@ window.close();
         <span className={style.amountT} >amount</span>
         <span className={style.amount} >${data?.detail?.amount}</span>
     </div>
+    <p className={style.detail} >
+        {data?.detail?.description}
+    </p>
     <div  className={style.actions} >
         <button className={style.action} >Approve</button>
     </div>
