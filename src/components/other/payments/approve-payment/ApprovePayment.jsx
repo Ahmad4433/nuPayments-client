@@ -57,14 +57,19 @@ const rec = data?.user?._id
 console.log(rec,data2)
 try {
     
-    // const response = await fetch('https://nu-payment-server-web.vercel.app/transcation/add',{
+    const response = await fetch('https://nu-payment-server-web.vercel.app/transcation/add',{
 
 
-    // method:'POST',
-    // body:JSON.stringify({data:data2,rec:rec}),
-    // headers:{'Content-Type':'application/json'}
-    // })
-    // const resData = await response.json()
+    method:'POST',
+    body:JSON.stringify({data:data2,rec:rec}),
+    headers:{'Content-Type':'application/json'}
+    })
+    const resData = await response.json()
+    if(!response.ok){
+        console.log(resData.message)
+    }else{
+        console.log(resData)
+    }
 
 } catch (error) {
     console.log(error)
