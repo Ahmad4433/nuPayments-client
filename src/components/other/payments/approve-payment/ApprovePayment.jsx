@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from './approvePayment.module.css'
 import { IoCloseSharp } from "react-icons/io5";
 const ApprovePayment = () => {
 
+    const urlLink = window.location.search
+    const params = new URLSearchParams(urlLink)
+    const link = params.get('id')
+
+        useEffect(()=>{
+
+            console.log(link)
+
+        },[link])
 
     const closeTab = ()=>{
 // Close the current tab
