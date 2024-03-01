@@ -1,17 +1,44 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './approvePayment.module.css'
 import { IoCloseSharp } from "react-icons/io5";
 const ApprovePayment = () => {
+    const [data,setData] = useState('')
 
     const urlLink = window.location.search
     const params = new URLSearchParams(urlLink)
     const link = params.get('id')
 
         useEffect(()=>{
-
-            console.log(link)
+getPaymentDetail()
+   
 
         },[link])
+
+
+async function getPaymentDetail(){
+try {
+    
+    const response = await fetch('https://nu-payment-server-web.vercel.app/single',{
+
+method:'POST',
+body:JSON.stringify({id:link}),
+headers:{'Content-Type':'application/json'}
+
+})
+
+const resData = await response.json()
+if(!response.ok){
+    console.log(resData.message)
+}else{
+    console.log(resData)
+}
+
+} catch (error) {
+ console.log(error)   
+}
+
+
+}
 
     const closeTab = ()=>{
 // Close the current tab
