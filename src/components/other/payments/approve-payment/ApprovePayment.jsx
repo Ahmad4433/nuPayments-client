@@ -5,7 +5,7 @@ import { Alert, Snackbar } from "@mui/material";
 const ApprovePayment = () => {
   const [data, setData] = useState("");
   const [sendData, setSendData] = useState(null);
-  const [disOnResult,setDisOnResult] = useState(false)
+  const [disOnResult, setDisOnResult] = useState(false);
 
   const urlLink = window.location.search;
   const params = new URLSearchParams(urlLink);
@@ -66,8 +66,7 @@ const ApprovePayment = () => {
         setSendData(resData?.message);
       } else {
         setSendData(resData?.message);
-        setDisOnResult(true)
-       
+        setDisOnResult(true);
       }
     } catch (error) {
       console.log(error);
@@ -103,7 +102,11 @@ const ApprovePayment = () => {
         </div>
         <p className={style.detail}>{data?.detail?.description}</p>
         <div className={style.actions}>
-          <button disabled={disOnResult} onClick={approveHandler} className={style.action}>
+          <button
+            disabled={disOnResult}
+            onClick={approveHandler}
+            className={style.action}
+          >
             Approve
           </button>
         </div>
@@ -115,7 +118,13 @@ const ApprovePayment = () => {
         onClose={() => setSendData(null)}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Alert onClose={()=>setSendData(null)} open={sendData} severity="success" >{sendData}</Alert>
+        <Alert
+          onClose={() => setSendData(null)}
+          open={sendData}
+          severity="success"
+        >
+          {sendData}
+        </Alert>
       </Snackbar>
     </div>
   );
