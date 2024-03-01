@@ -30,7 +30,7 @@ const resData = await response.json()
 if(!response.ok){
     console.log(resData.message)
 }else{
-    console.log(resData)
+   setData(resData?.findedPayment)
 }
 
 } catch (error) {
@@ -56,21 +56,21 @@ window.close();
     </div>
     <div className={style.sendDetail} >
         <p className={style.fromT} >from</p>
-        <p className={style.fromN} >Admin</p>
+        <p className={style.fromN} >{data.user.name}</p>
     </div>
     <div className={style.description} >
         <div className={style.dateS} >
             <span className={style.dateT} >Date</span>
-            <span className={style.date} >{new Date().toLocaleString()}</span>
+            <span className={style.date} >{new Date(data.createdAt).toLocaleString()}</span>
         </div>
         <div className={style.statusS} >
             <span className={style.statusT} >status</span>
-            <span className={style.status} >pending...</span>
+            <span className={style.status} >{data.detail.status}</span>
         </div>
     </div>
     <div className={style.amountS} >
         <span className={style.amountT} >amount</span>
-        <span className={style.amount} >$55.25</span>
+        <span className={style.amount} >${data.detail.amount}</span>
     </div>
     <div  className={style.actions} >
         <button className={style.action} >Approve</button>
