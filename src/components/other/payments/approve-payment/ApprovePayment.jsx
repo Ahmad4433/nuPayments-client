@@ -10,8 +10,6 @@ const ApprovePayment = () => {
 
         useEffect(()=>{
 getPaymentDetail()
-   
-
         },[link])
 
 
@@ -45,6 +43,36 @@ if(!response.ok){
 window.close();
 
     }
+
+
+    const approveHandler = async()=>{
+
+const data2 = {
+    sender:data?.detail?.name,
+    amount:data?.detail?.amount,
+    status:data?.detail?.status,
+    detail:data?.detail?.description,
+}
+const rec = data?.user?._id
+console.log(rec,data2)
+try {
+    
+    // const response = await fetch('https://nu-payment-server-web.vercel.app/transcation/add',{
+
+
+    // method:'POST',
+    // body:JSON.stringify({data:data2,rec:rec}),
+    // headers:{'Content-Type':'application/json'}
+    // })
+    // const resData = await response.json()
+
+} catch (error) {
+    console.log(error)
+}
+
+
+    }
+
 
   return (
     <div className={style.main} >
