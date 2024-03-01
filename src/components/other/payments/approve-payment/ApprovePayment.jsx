@@ -112,7 +112,7 @@ const ApprovePayment = () => {
         onClose={() => setData(null)}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Alert severity="success" >{sendData}</Alert>
+        <Alert open={sendData} severity="success" >{sendData}</Alert>
       </Snackbar>
     </div>
   );
