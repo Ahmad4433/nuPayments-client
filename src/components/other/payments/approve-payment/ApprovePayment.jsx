@@ -104,7 +104,7 @@ try {
         {data?.detail?.description}
     </p>
     <div  className={style.actions} >
-        <button className={style.action} >Approve</button>
+        <button onClick={approveHandler} className={style.action} >Approve</button>
     </div>
       </div>
 
