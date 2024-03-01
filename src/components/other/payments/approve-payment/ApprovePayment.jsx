@@ -18,7 +18,7 @@ const ApprovePayment = () => {
   async function getPaymentDetail() {
     try {
       const response = await fetch(
-        "https://nu-payment-server-web.vercel.app/payment/single",
+        "https://newapp--4-f1f2be6aa8d1.herokuapp.com/payment/single",
         {
           method: "POST",
           body: JSON.stringify({ id: link }),
@@ -53,7 +53,7 @@ const ApprovePayment = () => {
     console.log(rec, data2);
     try {
       const response = await fetch(
-        "https://nu-payment-server-web.vercel.app/transcation/add",
+        "https://newapp--4-f1f2be6aa8d1.herokuapp.com/transcation/add",
         {
           method: "POST",
           body: JSON.stringify({ data: data2, rec: rec }),
