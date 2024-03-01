@@ -65,6 +65,7 @@ const ApprovePayment = () => {
         setSendData(resData?.message);
       } else {
         setSendData(resData?.message);
+        document.getElementById('sendBtn').disabled = true
       }
     } catch (error) {
       console.log(error);
@@ -100,7 +101,7 @@ const ApprovePayment = () => {
         </div>
         <p className={style.detail}>{data?.detail?.description}</p>
         <div className={style.actions}>
-          <button onClick={approveHandler} className={style.action}>
+          <button  id="sendBtn" onClick={approveHandler} className={style.action}>
             Approve
           </button>
         </div>
@@ -109,10 +110,10 @@ const ApprovePayment = () => {
       <Snackbar
         autoHideDuration={3000}
         open={sendData}
-        onClose={() => setData(null)}
+        onClose={() => setSendData(null)}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Alert open={sendData} severity="success" >{sendData}</Alert>
+        <Alert onClose={()=>setSendData(null)} open={sendData} severity="success" >{sendData}</Alert>
       </Snackbar>
     </div>
   );
