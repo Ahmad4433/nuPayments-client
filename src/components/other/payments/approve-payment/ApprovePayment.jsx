@@ -5,6 +5,7 @@ import { Alert, Snackbar } from "@mui/material";
 const ApprovePayment = () => {
   const [data, setData] = useState("");
   const [sendData, setSendData] = useState(null);
+  const [disOnResult,setDisOnResult] = useState(false)
 
   const urlLink = window.location.search;
   const params = new URLSearchParams(urlLink);
@@ -65,7 +66,8 @@ const ApprovePayment = () => {
         setSendData(resData?.message);
       } else {
         setSendData(resData?.message);
-        document.getElementById('sendBtn').disabled = true
+        setDisOnResult(true)
+       
       }
     } catch (error) {
       console.log(error);
@@ -101,7 +103,7 @@ const ApprovePayment = () => {
         </div>
         <p className={style.detail}>{data?.detail?.description}</p>
         <div className={style.actions}>
-          <button  id="sendBtn" onClick={approveHandler} className={style.action}>
+          <button disabled={disOnResult} onClick={approveHandler} className={style.action}>
             Approve
           </button>
         </div>
