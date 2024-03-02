@@ -57,7 +57,16 @@
     margin-bottom: 1rem;
 }
 
-.statusS,.dateS{
+.dateS{
+    display: flex;
+       gap: 1.4rem;
+}
+
+.date{
+    font-weight: 600;
+}
+
+.statusS{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -66,11 +75,13 @@
 
 
 .status{
-    background-color: antiquewhite;
-    padding: 0.4rem 1rem;
+
+
     text-align: center;
     display: block;
-    border-radius: 4px;
+   font-weight: 600;
+   font-size: 1.1rem;
+
 }
 
 .amountS{

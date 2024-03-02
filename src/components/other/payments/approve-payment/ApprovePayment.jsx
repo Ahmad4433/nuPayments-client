@@ -82,6 +82,7 @@ const ApprovePayment = () => {
         </div>
         <div className={style.sendDetail}>
           <p className={style.fromT}>from</p>
+          <img src={data.user?.image} className={style.userImg} />
           <p className={style.fromN}>{data?.user?.name}</p>
         </div>
         <div className={style.description}>
