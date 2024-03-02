@@ -43,10 +43,22 @@
     padding: 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     border: 1px solid #e8e8e8;
     margin: 1rem 0rem;
+    gap: 1rem;
+}
 
+.fromN{
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.userImg{
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
 }
 
 .description{
