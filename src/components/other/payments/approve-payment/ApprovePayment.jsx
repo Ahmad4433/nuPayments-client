@@ -31,6 +31,7 @@ const ApprovePayment = () => {
         console.log(resData.message);
       } else {
         setData(resData?.findedPayment);
+        console.log(resData)
       }
     } catch (error) {
       console.log(error);
@@ -67,7 +68,7 @@ const ApprovePayment = () => {
       } else {
         setSendData(resData?.message);
         setDisOnResult(true);
-        console.log(resData)
+     
       }
     } catch (error) {
       console.log(error);
