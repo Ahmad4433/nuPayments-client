@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./banner.module.css";
+
 const Banner = () => {
 
 
@@ -8,6 +9,8 @@ const Banner = () => {
         top: 0,
         behavior: 'smooth'
     });
+
+   
 };
 
 

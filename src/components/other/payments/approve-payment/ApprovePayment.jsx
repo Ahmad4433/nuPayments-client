@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./approvePayment.module.css";
 import { IoCloseSharp } from "react-icons/io5";
 import { Alert, Snackbar } from "@mui/material";
+import Swal from "sweetalert2";
 const ApprovePayment = () => {
   const [data, setData] = useState("");
   const [sendData, setSendData] = useState(null);
@@ -68,6 +69,12 @@ const ApprovePayment = () => {
       } else {
         setSendData(resData?.message);
         setDisOnResult(true);
+        Swal.fire({
+          title: 'Success!',
+          text: 'Payment added successfully!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
      
       }
     } catch (error) {
