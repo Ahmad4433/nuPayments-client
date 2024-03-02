@@ -49,7 +49,7 @@
 }
 
 .fromN{
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.4px;
 }
 
@@ -75,8 +75,7 @@
 }
 
 .date{
-    font-weight: 600;
-}
+    font-weight: 500;}
 
 .statusS{
     display: flex;
@@ -89,10 +88,10 @@
 .status{
 
 
-    text-align: center;
+    
     display: block;
-   font-weight: 600;
-   font-size: 1.1rem;
+    font-weight: 500; 
+      font-size: 1.1rem;
 
 }
 
