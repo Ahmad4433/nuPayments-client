@@ -125,3 +125,10 @@
 }
 
 }
+
+
+@media(min-width:1600px){
+  .rDetail{
+    padding-top: 2rem;
+  }
+}
