@@ -43,6 +43,7 @@
     padding: 1rem;
     display: flex;
     border: 1px solid #e8e8e8;
+    align-items: center;
     margin: 1rem 0rem;
     gap: 1rem;
 
@@ -51,6 +52,7 @@
 .fromN{
     font-weight: 500;
     letter-spacing: 0.4px;
+    font-size: 1.1rem;
 }
 
 .userImg{
