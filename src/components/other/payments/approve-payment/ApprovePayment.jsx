@@ -56,7 +56,7 @@ const ApprovePayment = () => {
         "https://newapp--4-f1f2be6aa8d1.herokuapp.com/transcation/add",
         {
           method: "POST",
-          body: JSON.stringify({ data: data2, rec: rec }),
+          body: JSON.stringify({ data: data2, rec: rec,payId:link }),
           headers: { "Content-Type": "application/json" },
         }
       );
