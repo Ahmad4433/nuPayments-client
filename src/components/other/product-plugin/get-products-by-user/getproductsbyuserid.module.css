@@ -1,0 +1,45 @@
+
+.main{
+    padding: 2rem;
+}
+
+.card{
+
+ width: 80%;
+ margin: 0 auto;
+    background-color:black;
+    color: rgb(228, 228, 228);
+    padding: 2rem;
+    border-radius: 10px;
+    
+}
+
+.code{
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.copy{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.copy button{
+    padding: 0.6rem;
+width: 80px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-family: sans-serif;
+    letter-spacing: 0.6px;
+   
+    cursor: pointer;
+    &:hover{
+        background-color: black;
+    }
+}
