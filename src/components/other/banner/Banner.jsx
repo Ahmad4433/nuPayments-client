@@ -26,8 +26,8 @@ const Banner = () => {
         </p>
       </div>
         <div className={style.right} >
-            <p className={style.rHiding} >Low Fees, Faster Transactions</p>
-            <p className={style.rDetail} >1.7% fee across the board to send money anywhere.</p>
+           <div> <p className={style.rHiding} >Low Fees, Faster Transactions</p>
+            <p className={style.rDetail} >1.7% fee across the board to send money anywhere.</p></div>
            <div className={style.action} >
            <button onClick={navigateToTop} className={style.action1}>Get Started</button>
            </div>
