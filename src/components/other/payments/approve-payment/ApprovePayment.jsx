@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./approvePayment.module.css";
 import { IoCloseSharp } from "react-icons/io5";
 import { Alert, Snackbar } from "@mui/material";
+import { CiShare2 } from "react-icons/ci";
 import Swal from "sweetalert2";
 const ApprovePayment = () => {
   const [data, setData] = useState("");
@@ -10,6 +11,7 @@ const ApprovePayment = () => {
 
   const urlLink = window.location.search;
   const params = new URLSearchParams(urlLink);
+
   const link = params.get("id");
 
   useEffect(() => {
@@ -32,7 +34,7 @@ const ApprovePayment = () => {
         console.log(resData.message);
       } else {
         setData(resData?.findedPayment);
-        console.log(resData)
+        console.log(resData);
       }
     } catch (error) {
       console.log(error);
@@ -58,7 +60,7 @@ const ApprovePayment = () => {
         "https://newapp--4-f1f2be6aa8d1.herokuapp.com/transcation/add",
         {
           method: "POST",
-          body: JSON.stringify({ data: data2, rec: rec,payId:link }),
+          body: JSON.stringify({ data: data2, rec: rec, payId: link }),
           headers: { "Content-Type": "application/json" },
         }
       );
@@ -70,12 +72,11 @@ const ApprovePayment = () => {
         setSendData(resData?.message);
         setDisOnResult(true);
         Swal.fire({
-          title: 'Success!',
-          text: 'Payment added successfully!',
-          icon: 'success',
-          confirmButtonText: 'OK'
+          title: "Success!",
+          text: "Payment added successfully!",
+          icon: "success",
+          confirmButtonText: "OK",
         });
-     
       }
     } catch (error) {
       console.log(error);
@@ -86,7 +87,7 @@ const ApprovePayment = () => {
     <div className={style.main}>
       <div className={style.card}>
         <div className={style.head}>
-          <p className={style.title}>Pending Approval</p>
+          <p className={style.title}>{data?.detail?.status ==='Send' || 'send' ?'Pending Request':'Pending Approval'}</p>
           <IoCloseSharp onClick={closeTab} className={style.icon} />
         </div>
         <div className={style.sendDetail}>
@@ -103,14 +104,34 @@ const ApprovePayment = () => {
           </div>
           <div className={style.statusS}>
             <span className={style.statusT}>status</span>
-            <span className={style.status}>{data?.detail?.status}</span>
+            <span className={style.status}>Pending...</span>
           </div>
         </div>
         <div className={style.amountS}>
-          <span className={style.amountT}>amount</span>
-          <span className={style.amount}>${data?.detail?.amount}</span>
+          <p className={style.amountT}>amount</p>
+
+         <div className={style.amountLower} >
+
+         <div className={style.qrSection}>
+            <span className={style.amount}>${data?.detail?.amount}</span>
+            <span className={style.method}>{data?.detail?.method}</span>
+          </div>
+          <div className={style.qrApi}>
+            <img
+              src='https://quickchart.io/qr?text=${generatedLink}&size=400}'
+              className={style.api}
+            />
+            <CiShare2 className={style.share} />
+          </div>
+
+
+         </div>
         </div>
-        <p className={style.detail}>{data?.detail?.description}</p>
+      <div className={style.note} >
+    <p>Note</p>
+      <p className={style.detail}>{data?.detail?.description}</p>
+
+      </div>
         <div className={style.actions}>
           <button
             disabled={disOnResult}
