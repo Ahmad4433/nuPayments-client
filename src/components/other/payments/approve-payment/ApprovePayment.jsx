@@ -8,13 +8,17 @@ const ApprovePayment = () => {
   const [data, setData] = useState("");
   const [sendData, setSendData] = useState(null);
   const [disOnResult, setDisOnResult] = useState(false);
+  const [urlLink2,setUrlLink2]= useState('')
 
   const urlLink = window.location.search;
   const params = new URLSearchParams(urlLink);
 
   const link = params.get("id");
-console.log(window.location.href)
+
   useEffect(() => {
+
+    setUrlLink2(`https://quickchart.io/qr?text=${window.location.href}&size=400}`)
+
     getPaymentDetail();
   }, [link]);
 
@@ -118,7 +122,7 @@ console.log(window.location.href)
           </div>
           <div className={style.qrApi}>
             <img
-              src='https://quickchart.io/qr?text=${generatedLink}&size=400}'
+              src={urlLink2}
               className={style.api}
             />
             <CiShare2 className={style.share} />
