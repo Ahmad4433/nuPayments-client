@@ -92,8 +92,8 @@ const ApprovePayment = () => {
     navigator
       .share({
         title: "Payment request",
-        URL: window.location.href,
         text: "payment",
+        URL: window.location.href,
       })
       .then()
       .catch((error) => {
