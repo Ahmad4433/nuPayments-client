@@ -8,7 +8,7 @@ const ApprovePayment = () => {
   const [data, setData] = useState("");
   const [sendData, setSendData] = useState(null);
   const [disOnResult, setDisOnResult] = useState(false);
-  const [urlLink2,setUrlLink2]= useState('')
+  const [urlLink2, setUrlLink2] = useState("");
 
   const urlLink = window.location.search;
   const params = new URLSearchParams(urlLink);
@@ -16,8 +16,9 @@ const ApprovePayment = () => {
   const link = params.get("id");
 
   useEffect(() => {
-
-    setUrlLink2(`https://quickchart.io/qr?text=${window.location.href}&size=400}`)
+    setUrlLink2(
+      `https://quickchart.io/qr?text=${window.location.href}&size=400}`
+    );
 
     getPaymentDetail();
   }, [link]);
@@ -87,11 +88,28 @@ const ApprovePayment = () => {
     }
   };
 
+  const shareHandler = () => {
+    navigator
+      .share({
+        title: "Payment request",
+        URL: window.location.href,
+        text: "payment",
+      })
+      .then()
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className={style.main}>
       <div className={style.card}>
         <div className={style.head}>
-          <p className={style.title}>{data?.detail?.status ==='Send'?'Pending Request':'Pending Approval'}</p>
+          <p className={style.title}>
+            {data?.detail?.status === "Send"
+              ? "Pending Request"
+              : "Pending Approval"}
+          </p>
           <IoCloseSharp onClick={closeTab} className={style.icon} />
         </div>
         <div className={style.sendDetail}>
@@ -114,28 +132,21 @@ const ApprovePayment = () => {
         <div className={style.amountS}>
           <p className={style.amountT}>amount</p>
 
-         <div className={style.amountLower} >
-
-         <div className={style.qrSection}>
-            <span className={style.amount}>{data?.detail?.amount}</span>
-            <span className={style.method}>{data?.detail?.method}</span>
+          <div className={style.amountLower}>
+            <div className={style.qrSection}>
+              <span className={style.amount}>{data?.detail?.amount}</span>
+              <span className={style.method}>{data?.detail?.method}</span>
+            </div>
+            <div className={style.qrApi}>
+              <img src={urlLink2} className={style.api} />
+              <CiShare2 onClick={shareHandler} className={style.share} />
+            </div>
           </div>
-          <div className={style.qrApi}>
-            <img
-              src={urlLink2}
-              className={style.api}
-            />
-            <CiShare2 className={style.share} />
-          </div>
-
-
-         </div>
         </div>
-      <div className={style.note} >
-    <p>Note</p>
-      <p className={style.detail}>{data?.detail?.description}</p>
-
-      </div>
+        <div className={style.note}>
+          <p>Note</p>
+          <p className={style.detail}>{data?.detail?.description}</p>
+        </div>
         <div className={style.actions}>
           <button
             disabled={disOnResult}
