@@ -13,7 +13,7 @@ const ApprovePayment = () => {
   const params = new URLSearchParams(urlLink);
 
   const link = params.get("id");
-
+console.log(window.location.href)
   useEffect(() => {
     getPaymentDetail();
   }, [link]);
