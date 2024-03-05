@@ -91,7 +91,7 @@ const ApprovePayment = () => {
     <div className={style.main}>
       <div className={style.card}>
         <div className={style.head}>
-          <p className={style.title}>{data?.detail?.status ==='Send' || 'send' ?'Pending Request':'Pending Approval'}</p>
+          <p className={style.title}>{data?.detail?.status ==='Send'?'Pending Request':'Pending Approval'}</p>
           <IoCloseSharp onClick={closeTab} className={style.icon} />
         </div>
         <div className={style.sendDetail}>
