@@ -148,15 +148,15 @@
 
 }
 .amount{
-    font-weight: 600;
+    font-weight: 500;
 /* color: seagreen; */
 letter-spacing: 0.4px;
-font-size: 1.4rem;
+font-size: 1.6rem;
 }
 
 
 .method{
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .actions{
