@@ -117,7 +117,7 @@ const ApprovePayment = () => {
          <div className={style.amountLower} >
 
          <div className={style.qrSection}>
-            <span className={style.amount}>${data?.detail?.amount}</span>
+            <span className={style.amount}>{data?.detail?.amount}</span>
             <span className={style.method}>{data?.detail?.method}</span>
           </div>
           <div className={style.qrApi}>
