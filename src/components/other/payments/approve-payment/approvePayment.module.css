@@ -197,3 +197,62 @@ font-weight: 500;
 
     
 }
+
+.passModel{
+    background-color: rgba(0, 0, 0, 0.399);
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form{
+    width: 360px;
+    gap: 2rem;
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    justify-content:center;
+}
+.form input{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    &:focus{
+        border-color: #333;
+    }
+   
+
+}
+
+.form button{
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    background-color: seagreen;
+    color: white;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    &:hover{
+        background-color: rgba(46, 139, 86, 0.899);
+    }
+}

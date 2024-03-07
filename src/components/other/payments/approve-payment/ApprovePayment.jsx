@@ -9,6 +9,8 @@ const ApprovePayment = () => {
   const [sendData, setSendData] = useState(null);
   const [disOnResult, setDisOnResult] = useState(false);
   const [urlLink2, setUrlLink2] = useState("");
+  const [isPassOpen,setIsPassOpen] = useState(false)
+  const [pin,setPin] = useState('')
 
   const urlLink = window.location.search;
   const params = new URLSearchParams(urlLink);
@@ -52,41 +54,89 @@ const ApprovePayment = () => {
   };
 
   const approveHandler = async () => {
-    const data2 = {
-      sender: data?.detail?.name,
-      amount: data?.detail?.amount,
-      status: data?.detail?.status,
-      detail: data?.detail?.description,
-    };
-    const rec = data?.user?._id;
-    console.log(rec, data2);
-    try {
-      const response = await fetch(
-        "https://newapp--4-f1f2be6aa8d1.herokuapp.com/transcation/add",
-        {
-          method: "POST",
-          body: JSON.stringify({ data: data2, rec: rec, payId: link }),
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-      const resData = await response.json();
-      if (!response.ok) {
-        console.log(resData.message);
-        setSendData(resData?.message);
-      } else {
-        setSendData(resData?.message);
-        setDisOnResult(true);
-        Swal.fire({
-          title: "Success!",
-          text: "Payment added successfully!",
-          icon: "success",
-          confirmButtonText: "OK",
-        });
-      }
-    } catch (error) {
-      console.log(error);
-    }
+
+    setIsPassOpen(true)
+
+    // const data2 = {
+    //   sender: data?.detail?.name,
+    //   amount: data?.detail?.amount,
+    //   status: data?.detail?.status,
+    //   detail: data?.detail?.description,
+    // };
+    // const rec = data?.user?._id;
+    // console.log(rec, data2);
+    // try {
+    //   const response = await fetch(
+    //     "https://newapp--4-f1f2be6aa8d1.herokuapp.com/transcation/add",
+    //     {
+    //       method: "POST",
+    //       body: JSON.stringify({ data: data2, rec: rec, payId: link }),
+    //       headers: { "Content-Type": "application/json" },
+    //     }
+    //   );
+    //   const resData = await response.json();
+    //   if (!response.ok) {
+    //     console.log(resData.message);
+    //     setSendData(resData?.message);
+    //   } else {
+    //     setSendData(resData?.message);
+    //     setDisOnResult(true);
+    //     Swal.fire({
+    //       title: "Success!",
+    //       text: "Payment added successfully!",
+    //       icon: "success",
+    //       confirmButtonText: "OK",
+    //     });
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (event.target.classList.contains('approvePayment_passModel__6ujYC')) {
+        setIsPassOpen(false);
+      }
+    };
+  
+    document.body.addEventListener('click', handleClickOutside);
+  
+    return () => {
+      document.body.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+  
+
+useEffect(() => {
+  if (isPassOpen) {
+    // Prevent scrolling
+    document.body.style.overflow = 'hidden';
+  } else {
+    // Allow scrolling
+    document.body.style.overflow = 'auto';
+  }
+
+  // Cleanup function to reset overflow style when component unmounts
+  return () => {
+    document.body.style.overflow = 'auto';
+  };
+}, [isPassOpen]);
+
+
+const pinChange = (event)=>{
+
+  setPin(event.target.value)
+}
+
+
+  const confirmHandler = async()=>{
+
+    console.log(pin)
+    console.log(data?.detail?.name)
+
+  }
 
   const shareHandler = () => {
     navigator
@@ -103,6 +153,16 @@ const ApprovePayment = () => {
 
   return (
     <div className={style.main}>
+
+   {
+    isPassOpen &&    <div className={style.passModel} >
+    <div className={style.form} >
+    <input onChange={pinChange} maxLength={4} type="password" placeholder="Enter your 4-digit Pin"  />
+    <button onClick={confirmHandler} >Confirm</button>
+    </div>
+
+      </div>
+   }
       <div className={style.card}>
         <div className={style.head}>
           <p className={style.title}>
