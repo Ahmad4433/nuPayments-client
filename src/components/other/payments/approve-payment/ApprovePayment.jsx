@@ -55,42 +55,42 @@ const ApprovePayment = () => {
 
   const approveHandler = async () => {
 
-    setIsPassOpen(true)
+    // setIsPassOpen(true)
 
-    // const data2 = {
-    //   sender: data?.detail?.name,
-    //   amount: data?.detail?.amount,
-    //   status: data?.detail?.status,
-    //   detail: data?.detail?.description,
-    // };
-    // const rec = data?.user?._id;
-    // console.log(rec, data2);
-    // try {
-    //   const response = await fetch(
-    //     "https://newapp--4-f1f2be6aa8d1.herokuapp.com/transcation/add",
-    //     {
-    //       method: "POST",
-    //       body: JSON.stringify({ data: data2, rec: rec, payId: link }),
-    //       headers: { "Content-Type": "application/json" },
-    //     }
-    //   );
-    //   const resData = await response.json();
-    //   if (!response.ok) {
-    //     console.log(resData.message);
-    //     setSendData(resData?.message);
-    //   } else {
-    //     setSendData(resData?.message);
-    //     setDisOnResult(true);
-    //     Swal.fire({
-    //       title: "Success!",
-    //       text: "Payment added successfully!",
-    //       icon: "success",
-    //       confirmButtonText: "OK",
-    //     });
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    const data2 = {
+      sender: data?.detail?.name,
+      amount: data?.detail?.amount,
+      status: data?.detail?.status,
+      detail: data?.detail?.description,
+    };
+    const rec = data?.user?._id;
+    console.log(rec, data2);
+    try {
+      const response = await fetch(
+        "https://newapp--4-f1f2be6aa8d1.herokuapp.com/transcation/add",
+        {
+          method: "POST",
+          body: JSON.stringify({ data: data2, rec: rec, payId: link }),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      const resData = await response.json();
+      if (!response.ok) {
+        console.log(resData.message);
+        setSendData(resData?.message);
+      } else {
+        setSendData(resData?.message);
+        setDisOnResult(true);
+        Swal.fire({
+          title: "Success!",
+          text: "Payment added successfully!",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
 
